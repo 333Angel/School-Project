@@ -1,2 +1,2 @@
 # School-Project
-School project
+This is a project for school
