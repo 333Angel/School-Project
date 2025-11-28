@@ -27,7 +27,29 @@ public class ArrayUtils {
             }
         }
     }
-    
+    // --- BUBBLE SORT ---
+    public static void bubbleSort(int[] arr) {
+        int n = arr.length;
+        boolean swapped;
+
+        for (int i = 0; i < n - 1; i++) {
+            swapped = false;
+            for (int j = 0; j < n - i; j++) {
+                // compare other elements 
+                if (arr[j] > arr[j + 1]) {
+                    // swap them if they are in the wrong order
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                    swapped = true;
+                }
+            }
+            // if no two elements are were swapped
+            if (!swapped) {
+                break;
+            }
+        }
+    }
     // --- BINARY SEARCH ---
     public static int binarySearch(int[] arr, int target) {
         int low = 0;
@@ -45,5 +67,14 @@ public class ArrayUtils {
             }
         }
         return -1; //if not found
+    }
+    // --- LINEAR SEARCH ---
+    public static int linearSearch(int[] arr, int target) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == target) {
+                return i; // return index if found
+            }
+        }
+        return -1; // return -1 if not found
     }
 }
